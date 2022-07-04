@@ -1,5 +1,7 @@
-import 'widgets/transaction_history.dart';
 import 'package:flutter/material.dart';
+import 'widgets/transaction_history.dart';
+import 'widgets/transaction_form.dart';
+
 import 'models/transaction.dart';
 
 void main() {
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
+            TransactionForm(),
             TransactionHistory(transactions)
           ],
         ),
