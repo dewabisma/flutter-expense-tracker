@@ -1,6 +1,6 @@
+import 'package:expense_tracker_flutter/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/transaction.dart';
 
 class TransactionHistory extends StatelessWidget {
   final List<Transaction> transactions;
