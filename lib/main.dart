@@ -1,5 +1,6 @@
+import 'widgets/transaction_history.dart';
 import 'package:flutter/material.dart';
-import './transaction.dart';
+import 'models/transaction.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
           title: Text('Expense Tracker'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
               width: double.infinity,
@@ -36,22 +39,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            ...transactions
-                .map(
-                  (tx) => Card(
-                    child: Row(
-                      children: [
-                        Container(
-                          child: Text(tx.amount.toString()),
-                        ),
-                        Column(
-                          children: [Text(tx.title!), Text(tx.date.toString())],
-                        )
-                      ],
-                    ),
-                  ),
-                )
-                .toList()
+            TransactionHistory(transactions)
           ],
         ),
       ),
